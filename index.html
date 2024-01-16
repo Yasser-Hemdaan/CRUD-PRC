@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="body">
+
+    <!-- Add employee -->
+
+    <div class="container mt-3">
+        <h1>Add employee</h1>
+        <form action="" class="p-3">
+            <input type="text" name="employeeName" id="employeeName" class="form-control my-3"
+                placeholder="Employee Name">
+            <input type="email" name="employeeEmail" id="employeeEmail" class="form-control my-3"
+                placeholder="Employee Email">
+            <input type="text" name="employeeTitle" id="employeeTitle" class="form-control my-3"
+                placeholder="Employee Title">
+            <input type="text" name="employeeField" id="employeeField" class="form-control my-3"
+                placeholder="Employee Field">
+            <select name="employeeStatus" id="employeeStatus" class="form-select my-3">
+                <option value="" disabled selected>Employee Status</option>
+                <option value="approved">approved</option>
+                <option value="rejected">rejected</option>
+                <option value="shortList">short-list</option>
+                <option value="waiting">waiting</option>
+                <option value="review">review</option>
+            </select>
+            <select name="employeePosition" id="employeePosition" class="form-select my-3">
+                <option value="" disabled selected>Employee Position</option>
+                <option value="fresh">fresh</option>
+                <option value="junior">junior</option>
+                <option value="medLev">med-lev</option>
+                <option value="senior">senior</option>
+                <option value="teamLeader">team leader</option>
+                <option value="head">head</option>
+                <option value="consultunt">consultunt</option>
+            </select>
+            <!-- <textarea class="form-control" name="Comment" id="Comment" placeholder="Comment" cols="30"
+                rows="10"></textarea> -->
+            <button type="submit" id="submitAdd" class="btn btn-outline-success mt-3 d-block">Add Employee</button>
+            <button type="submit" id="submitUpdate" class="btn btn-outline-success mt-3">Update Employee</button>
+        </form>
+    </div>
+
+    <!-- search -->
+
+    <div class="container">
+
+        <div class="d-flex justify-content-around gap-5 p-3">
+            <input type="text" name="saerch" id="saerch" class="search form-control" placeholder="search by name"
+                oninput="findEmployee(this.value)">
+        </div>
+
+    </div>
+
+
+    <!-- Table of employees -->
+
+    <div class="container">
+        <table class="table align-middle my-5">
+            <thead class="">
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JS File -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+<tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+
+                            <div>
+                                <p class="fw-bold mb-1">John Doe</p>
+                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">Software engineer</p>
+                        <p class="text-muted mb-0">IT department</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success bg-success rounded-pill d-inline">Active</span>
+                    </td>
+                    <td>Senior</td>
+                    <td>
+                            <button type="button"
+                                class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-warning text-white">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button type="button"
+                                class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-danger text-white">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="fw-bold mb-1">Alex Ray</p>
+                                <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">Consultant</p>
+                        <p class="text-muted mb-0">Finance</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-info bg-info rounded-pill d-inline">Onboarding</span>
+                    </td>
+                    <td>Junior</td>
+                    <td>
+
+                        <button type="button"
+                            class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-warning text-white">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button type="button"
+                            class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-danger text-white">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="fw-bold mb-1">Kate Hunington</p>
+                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">Designer</p>
+                        <p class="text-muted mb-0">UI/UX</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-warning bg-warning rounded-pill d-inline">Awaiting</span>
+                    </td>
+                    <td>Senior</td>
+                    <td>
+
+                        <button type="button"
+                            class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-warning text-white">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button type="button"
+                            class="btn btn-outline-link btn-outline-sm btn-outline-rounded bg-danger text-white">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+ -->
